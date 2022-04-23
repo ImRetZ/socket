@@ -1,4 +1,4 @@
-from socket import *
+import socket
 import threading
 
 ip = str(input('Ip: '))
@@ -6,7 +6,7 @@ port = int(input('Port: '))
 times = int(input('Times: '))
 
 def tcp():
-  s = socket(AF_INET, SOCK_STREAM)
+  s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
   s.connect((ip, port))
   s.send("GET /" + port + " HTTP/1.1\r\n")
   s.send("Host: " + ip + "\r\n\r\n");
